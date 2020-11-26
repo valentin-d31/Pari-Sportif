@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/index','index');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route Pari 'Page Accueil'
+Route::get('/index', 'PariController@index')->name('pari.index');
