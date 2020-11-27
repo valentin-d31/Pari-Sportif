@@ -17,10 +17,10 @@ class CreateParisTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $tvale->string('subtitle');
+            $table->string('subtitle');
             $table->integer('coast');
             $table->string('description'); //uniquement lors de la consultation 'show'
-            $table->strinf('img');
+            $table->string('img');
             $table->timestamps();
         });
     }
