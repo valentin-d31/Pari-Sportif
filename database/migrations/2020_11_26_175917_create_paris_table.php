@@ -15,6 +15,12 @@ class CreateParisTable extends Migration
     {
         Schema::create('paris', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug')->unique();
+            $tvale->string('subtitle');
+            $table->integer('coast');
+            $table->string('description'); //uniquement lors de la consultation 'show'
+            $table->strinf('img');
             $table->timestamps();
         });
     }
