@@ -202,12 +202,12 @@
             <div class="mb-1 text-muted">{{$pari->created_at->format('d/m/Y')}}</div>
             <p class="mb-auto">{{$pari->subtitle}}</p>
             <p class="mb-auto">{{$pari->formatCoast()}}</p>
-            <strong href="#" class="stretched-link btn btn-info">Description Match</strong>
+            <strong href="{{route('pari.show', $product->slug)}}" class="stretched-link btn btn-info">Description Match</strong>
             </div>
             <div class="col-auto d-none d-lg-block">
             </div>
         </div>
-        </div>
+        </div>S
   @endforeach
   </div>
 </div>
