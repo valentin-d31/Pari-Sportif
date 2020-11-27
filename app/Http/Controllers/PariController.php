@@ -9,7 +9,7 @@ class PariController extends Controller
 {
     public function index()
     {
-        $paris = Pari::all();
+        $paris = Pari::orderBy("created_at", 'desc')->paginate(4);
 
         return view('paris.index', compact('paris'));
     }

@@ -11,6 +11,6 @@ class ParisTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Pari', 2)->create();
+        factory('App\Pari', 5)->create();
     }
 }
