@@ -13,4 +13,15 @@ class PariController extends Controller
 
         return view('paris.index', compact('paris'));
     }
+
+    public function show($slug)
+    {
+        $pari = Pari::where('slug', $slug)->first();
+
+        if (!$pari) {
+            return abort(404);
+          }
+
+        return view('paris.show', compact('pari'));
+    }
 }

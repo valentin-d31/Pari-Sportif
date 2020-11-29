@@ -19,5 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route Pari 'Page Accueil'
-Route::get('/index', 'PariController@index')->name('pari.index');
+//Route Pari (Page Accueil)
+Route::get('/index','PariController@index')->name('pari.index');
+Route::get('/index/{slug}','PariController@show')->name('pari.show');
+
+//Route Crud Administrateur
+Route::get('admin/index', 'AdminController@index')->name('admin.index');
