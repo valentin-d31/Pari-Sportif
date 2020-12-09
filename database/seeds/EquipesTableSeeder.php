@@ -17,10 +17,10 @@ class EquipesTableSeeder extends Seeder
         existante avant de seed notre bdd*/
         Equipe::truncate();
 
-        Equipe::create(['name' => 'Toulouse', ]);
+        Equipe::create(['name' => 'Toulouse']);
         Equipe::create(['name' => 'Paris']);
         Equipe::create(['name' => 'Lyon']);
-        Equipe::create(['name' => 'Bordeau']);
+        Equipe::create(['name' => 'Bordeaux']);
         Equipe::create(['name' => 'Lille']);
         Equipe::create(['name' => 'Montepellier']);
     }
