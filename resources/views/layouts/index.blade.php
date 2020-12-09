@@ -172,7 +172,7 @@
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 text-muted" href="#">Mon compte (utilisateur)</a>
       <a class="p-2 text-muted" href="#">Blablabla1</a>
-      <a class="p-2 text-muted" href="#">Crud Admin(création joueur(s)/équipe(s)</a>
+      <a class="p-2 text-muted" href="{{route('admin.index')}}">Crud Admin(création joueur(s)/équipe(s)</a>
     </nav>
   </div>
   <div class="row mb-2">
@@ -182,7 +182,7 @@
 
 
 <footer class="blog-footer">
-  <p>👹👽</p>
+  <p>👹Alexandre, Timithée & Valentin👽</p>
 </footer>
 </body>
 </html>

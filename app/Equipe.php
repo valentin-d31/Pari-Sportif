@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipe extends Model
 {
-    //
+    protected $guarded = [];
+
+    public function match()
+    {
+        return $this->belongsTo('App\match');
+       //return $this->belongsTo('App\match');
+    }
 }

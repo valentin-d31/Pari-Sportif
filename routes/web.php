@@ -24,4 +24,10 @@ Route::get('/index','PariController@index')->name('pari.index');
 Route::get('/index/{slug}','PariController@show')->name('pari.show');
 
 //Route Crud Administrateur
-Route::get('admin/index', 'AdminController@index')->name('admin.index');
+Route::get('admin', 'AdminController@index')->name('admin.index');
+Route::get('admin/create', 'AdminController@create')->name('admin.create');
+Route::post('admin', 'AdminController@store')->name('admin.store');
+Route::get('admin/{match}', 'AdminController@show')->name('admin.show');
+Route::get('admin/{match}/edit', 'AdminController@edit')->name('admin.edit');
+Route::patch('admin/{match}', 'AdminController@update')->name('admin.update');
+Route::delete('admin/{match}', 'AdminController@destroy')->name('admin.destroy');
