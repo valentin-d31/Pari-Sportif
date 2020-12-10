@@ -38,12 +38,16 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         $request = request()->validate([
-            "nom" => "required",
-            "prenom" => "required",
-            "age" => "required",
+            "name" => "required",
             "email" => "required",
-            "mdp" => "required",
-            "solde" => ""
+            "password" => "required",
+            "password_confirmation" => "required",
+            "age" => "required",
+            "adresse" => "required",
+            "tel_mobile" => "required",
+            "tel_fixe" => "required",
+            "sport_pref" => "required",
+            "montant_max" => "required",
         ]);
 
         Client::create($request);
@@ -83,12 +87,16 @@ class ClientController extends Controller
     public function update(Request $request, Client $Client)
     {
         $request = request()->validate([
-            "nom" => "required",
-            "prenom" => "required",
-            "age" => "required",
+            "name" => "required",
             "email" => "required",
-            "mdp" => "required",
-            "solde" => ""
+            "password" => "required",
+            "password_confirmation" => "required",
+            "age" => "required",
+            "adresse" => "required",
+            "tel_mobile" => "required",
+            "tel_fixe" => "required",
+            "sport_pref" => "required",
+            "montant_max" => "required",
         ]);
 
         $Client->update($request);
