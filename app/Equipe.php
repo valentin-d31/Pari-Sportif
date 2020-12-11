@@ -10,7 +10,6 @@ class Equipe extends Model
 
     public function match()
     {
-        return $this->belongsTo('App\match');
-       //return $this->belongsTo('App\match');
+        return $this->belongsTo('App\Match');
     }
 }

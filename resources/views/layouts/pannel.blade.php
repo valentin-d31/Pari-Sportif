@@ -172,7 +172,7 @@
 @endif
     @yield('content')
 <footer class="blog-footer">
-  <p>👹Alexandre, Timithée & Valentin👽</p>
+  <p>👹Alexandre, Timothée & Valentin👽</p>
 </footer>
 </body>
 </html>

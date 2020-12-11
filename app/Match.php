@@ -33,9 +33,9 @@ class Match extends Model
     }
 
 
-    public function equipes()
+    public function equipe()
     {
-        return $this->hasMany('App\equipe');
+        return $this->belongsTo('App\Equipe');
     }
 
 }

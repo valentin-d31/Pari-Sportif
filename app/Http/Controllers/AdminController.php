@@ -33,7 +33,6 @@ class AdminController extends Controller
             'equipe_id' => 'required|integer',
             //'equipe_A' => 'required|integer',
             //'equipe_B' => 'required|integer',
-
         ]);
 
         $match = Match::create($data);
@@ -84,13 +83,13 @@ class AdminController extends Controller
         ]);
 
         if ($match->update($data)) {
-            return redirect('admin/'. $match->id)
+            return redirect('admin/')
             ->with('success', 'Le match a bien été modifié');
         }
 
         return redirect()
         ->route('admin.show', ['id' => $match])
-        ->with('success', 'Une erreur est survenue. Le match n\'a pas été modifié');
+        ->with('error', 'Une erreur est survenue. Le match n\'a pas été modifié');
     }
 
     public function destroy($match)
@@ -108,6 +107,6 @@ class AdminController extends Controller
 
         return redirect()
               ->route('admin.show', ['id' => $match])
-              ->with('success', 'Une erreur est survenue. Le match n\'a pas été supprimé');
+              ->with('error', 'Une erreur est survenue. Le match n\'a pas été supprimé');
     }
 }
