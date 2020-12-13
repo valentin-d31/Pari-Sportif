@@ -1,5 +1,9 @@
 @extends('layouts.pannel')
 
+@section('titre')
+    Afficher les matchs
+@endsection
+
 @section('content')
 
     <div class="nav-scroller py-1 mb-2">

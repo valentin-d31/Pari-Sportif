@@ -1,5 +1,9 @@
 @extends('layouts.pannel')
 
+@section('titre')
+    Créer un match
+@endsection
+
 @section('content')
 
     <ul>

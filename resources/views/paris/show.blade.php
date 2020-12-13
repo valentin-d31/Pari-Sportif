@@ -1,4 +1,7 @@
 @extends('layouts.index')
+@section('titre')
+    Voir un match
+@endsection
 
 @section('content')
     <div class="col-md-12">
