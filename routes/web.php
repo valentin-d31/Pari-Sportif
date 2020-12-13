@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Authentification
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route Pari (Page Accueil)
-Route::get('/', 'PariController@index')->name('pari.index');
-Route::get('/index', 'PariController@index')->name('pari.index');
-Route::get('/paris/{match}', 'PariController@show')->name('pari.show');
+// Afficher les matchs pour un utilisateur
+Route::get('/', 'MatchController@index')->name('pari.index');
+Route::get('/index', 'MatchController@index')->name('pari.index');
+Route::get('/paris/{match}', 'MatchController@show')->name('pari.show');
 
 //Route Crud Administrateur
 Route::get('admin', 'AdminController@index')->name('admin.index');
