@@ -33,9 +33,6 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -45,7 +42,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="text-muted" href="#">MonJoliPanier <span
+                                    class="badge badge-pill badge-dark"></span></a>
+                        </li>
 
+                    </ul>
+
+                    <!-- Middle Side Of Navbar -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="blog-header-logo text-dark" href="{{ route('pari.index') }}">
+                                <h2>💆🏼‍♂️LeBonPari👴🏿</h2>
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -68,8 +78,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                    {{-- Mon compte --}}
+                                    <a class="dropdown-item"
+                                        href=" {{-- {{ route('', Auth::user()->id) }} --}} ">Mon
+                                        compte</a>
+
+                                    {{-- Déconnexion --}}
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Déconnexion') }}
                                     </a>
 
@@ -83,11 +99,23 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+            <nav class="nav d-flex justify-content-between">
+                <a class="p-2 text-muted" href="#">Mon compte (utilisateur)</a>
+                <a class="p-2 text-muted" href="#">Misez sur le PSG !</a>
+                <a class="p-2 text-muted" href="{{ route('admin.index') }}">Crud Admin(création joueur(s)/équipe(s)</a>
+            </nav>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <footer class="text-muted">
+        <div class="container d-flex justify-content-center">
+            <p>👹Alexandre, Timothée & Valentin👽</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

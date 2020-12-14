@@ -38,15 +38,15 @@ class AdminController extends Controller
         $match = Match::create($data);
 
         return redirect()
-        ->route('admin.index', compact('match'))
-        ->with('success', 'Le match a bien été créer.');
+            ->route('admin.index', compact('match'))
+            ->with('success', 'Le match a bien été créer.');
     }
 
     public function show($match)
     {
         $match = Match::where('id', $match)->first();
 
-        if(!$match) {
+        if (!$match) {
             return abort(404);
         }
 
@@ -58,7 +58,7 @@ class AdminController extends Controller
         $equipes = Equipe::all();
         $match = Match::where('id', $match)->first();
 
-        if(!$match) {
+        if (!$match) {
             return abort(404);
         }
 
@@ -69,9 +69,9 @@ class AdminController extends Controller
     {
         $match = Match::where('id', $match)->first();
 
-        if(!$match) {
+        if (!$match)
             return abort(404);
-        }
+
 
         $data = request()->validate([
             'name' => 'required',
@@ -84,12 +84,12 @@ class AdminController extends Controller
 
         if ($match->update($data)) {
             return redirect('admin/')
-            ->with('success', 'Le match a bien été modifié');
+                ->with('success', 'Le match a bien été modifié');
         }
 
         return redirect()
-        ->route('admin.show', ['id' => $match])
-        ->with('error', 'Une erreur est survenue. Le match n\'a pas été modifié');
+            ->route('admin.show', ['id' => $match])
+            ->with('error', 'Une erreur est survenue. Le match n\'a pas été modifié');
     }
 
     public function destroy($match)
@@ -101,12 +101,12 @@ class AdminController extends Controller
         }
 
         if ($match->delete()) {
-        return redirect('admin/')
-            ->with('success', 'Le match a bien été supprimé');
+            return redirect('admin/')
+                ->with('success', 'Le match a bien été supprimé');
         }
 
         return redirect()
-              ->route('admin.show', ['id' => $match])
-              ->with('error', 'Une erreur est survenue. Le match n\'a pas été supprimé');
+            ->route('admin.show', ['id' => $match])
+            ->with('error', 'Une erreur est survenue. Le match n\'a pas été supprimé');
     }
 }
