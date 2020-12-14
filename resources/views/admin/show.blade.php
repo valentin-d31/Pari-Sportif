@@ -9,10 +9,11 @@
         @if (!session()->has('success'))
             <h1>{{ $match->name }}</h1>
             <hr>
-            <p><strong>Equipe:</strong> {{ $match->equipe->name }}</p>
-            <p><strong>Pays:</strong> {{ $match->pays }}</p>
-            <p><strong>Cote:</strong> {{ $match->cote }}</p>
-            <p><strong>Durée:</strong> {{ $match->duree }}</p>
+            <p><strong>Equipe :</strong> {{ $match->equipe->name }}</p>
+            <p><strong>Pays :</strong> {{ $match->pays }}</p>
+            <p><strong>Cote :</strong> {{ $match->getCote()[$match->cote] }}</p>
+            <p><strong>Durée :</strong> {{ $match->duree }} mn</p>
+            <p><strong>Créer le :</strong> {{ $match->created_at->format('d/m/Y') }}</p>
             <hr>
             <a href="{{ route('admin.edit', $match) }}" class="btn btn-secondary my-3">Editer</a>
             <form action="{{ route('admin.destroy', $match) }}" method="POST" style="display: inline;">
