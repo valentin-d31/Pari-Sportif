@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'tel_mobile' => ['required', 'min:10', 'max:255'],
             'tel_fixe' => ['required', 'min:10', 'max:255'],
             'sport_pref' => ['required', 'string', 'max:255'],
-            'montant_max' => ['required', 'max:255'],
+            'montant_max' => ['required', 'integer'],
             'admin' => ['required']
         ]);
     }
