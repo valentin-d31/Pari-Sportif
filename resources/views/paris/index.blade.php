@@ -2,29 +2,32 @@
 @extends('home')
 
 @section('titre')
-    Afficher les paris disponible
+Afficher les paris disponible
 @endsection
 
 @section('content')
 <div class="container">
     <div class="row mb-2">
         @foreach ($matchs as $match)
-            <div class="col-md-6">
-                <div
-                    class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">Match</strong>
-                        <h5 class="mb-0">{{ $match->name }}</h5>
-                        <div class="mb-1 text-muted">{{ $match->created_at->format('d/m/Y') }}</div>
-                        <p class="mb-auto">{{ $match->pays }}</p>
-                        <p class="mb-auto">{{ $match->duree }} mn</p>
-                        <strong class="mb-auto">Cote à {{ $match->getCote()[$match->cote] }}</strong>
-                        <a href="{{ route('pari.show', $match->id) }}" class="stretched-link btn btn-info">Voir le match</a>
-                    </div>
+        <div class="col-md-6">
+            <div
+                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Match</strong>
+                    <h5 class="mb-0">{{ $match->name }}</h5>
+                    <div class="mb-1 text-muted">{{ $match->created_at->format('d/m/Y') }}</div>
+                    <p class="mb-auto">{{ $match->pays }}</p>
+                    <p class="mb-auto">{{ $match->duree }} mn</p>
+                    <strong class="mb-auto">Cote à {{ $match->getCote()[$match->cote] }}</strong>
                     <div class="col-auto d-none d-lg-block">
+                        <img src="{{asset('storage') . '/' . $match->image}}" width="200" height="250">
                     </div>
+                    <a href="{{ route('pari.show', $match->id) }}" class="stretched-link btn btn-info">Voir le match</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
                 </div>
             </div>
+        </div>
         @endforeach
         {{ $matchs->links() }}
     </div>

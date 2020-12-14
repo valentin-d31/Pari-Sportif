@@ -20,7 +20,8 @@ class CreateMatchesTable extends Migration
             $table->string('pays');
             $table->integer('cote');
             $table->integer('duree');
-            $table->unsignedBigInteger('equipe_id');
+            $table->unsignedBigInteger('equipe_id')->index();
+            $table->string('image');
             $table->timestamps();
 
             //$table->foreign('equipe_id')->references('id')->on('equipes');

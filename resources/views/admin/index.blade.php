@@ -21,6 +21,7 @@
                     <th scope="col">Pays</th>
                     <th scope="col">Durée</th>
                     <th scope="col">Création</th>
+                    <th scope="col">Image</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,10 @@
                         <td>{{ $match->pays }}</td>
                         <td>{{ $match->duree }} min</td>
                         <td>{{ $match->created_at->format('d/m/Y') }}</td>
+                        <td>
+                        <img src="{{asset('storage') . '/' . $match->image}}"
+                        style="width: 65px; height: 65px">
+                        </td>
                     </tr>
                 @empty
                     <p class="text-center">Il n'y a aucun match en cours</p>
