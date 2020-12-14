@@ -59,6 +59,7 @@ class RegisterController extends Controller
             'tel_fixe' => ['required', 'min:10', 'max:255'],
             'sport_pref' => ['required', 'string', 'max:255'],
             'montant_max' => ['required', 'max:255'],
+            'admin' => ['required']
         ]);
     }
 
@@ -80,6 +81,7 @@ class RegisterController extends Controller
             'tel_fixe' => $data['tel_fixe'],
             'sport_pref' => $data['sport_pref'],
             'montant_max' => $data['montant_max'],
+            'admin' => $data['admin'],
         ]);
     }
 }

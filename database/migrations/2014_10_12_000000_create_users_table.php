@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('sport_pref');
             $table->integer('montant_max');
             $table->string('password');
+            $table->string('admin');
             $table->rememberToken();
             $table->timestamps();
         });

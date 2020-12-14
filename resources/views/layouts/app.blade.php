@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Pari-Sportif</title>
+    <title>@yield('titre')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -112,7 +112,7 @@
     </div>
     <footer class="text-muted">
         <div class="container d-flex justify-content-center">
-            <p>👹Alexandre, Timothée & Valentin👽</p>
+            <p>Alexandre🍑, Timothée💦 Valentin🍆</p>
         </div>
     </footer>
 

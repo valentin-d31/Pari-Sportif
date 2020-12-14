@@ -26,7 +26,7 @@ Route::get('/index', 'MatchController@index')->name('pari.index');
 Route::get('/paris/{match}', 'MatchController@show')->name('pari.show');
 
 //Route Crud Administrateur
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['admin', 'auth']], function () {
     Route::get('admin', 'AdminController@index')->name('admin.index');
     Route::get('admin/create', 'AdminController@create')->name('admin.create');
     Route::post('admin', 'AdminController@store')->name('admin.store');

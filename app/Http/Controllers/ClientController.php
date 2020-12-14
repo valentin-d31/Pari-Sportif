@@ -53,7 +53,7 @@ class ClientController extends Controller
 
         Client::create($request);
 
-        return redirect('/clients');
+        return redirect()->route('home');
     }
 
     /**

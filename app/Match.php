@@ -32,6 +32,11 @@ class Match extends Model
         return self::CONST_VALUES[$index];
     }
 
+    public function convertTime($date)
+    {
+        $date = date('H:i:s');
+    }
+
 
     public function equipe()
     {
