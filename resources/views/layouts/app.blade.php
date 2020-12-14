@@ -42,11 +42,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="text-muted" href="#">MonJoliPanier <span
-                                    class="badge badge-pill badge-dark"></span></a>
-                        </li>
-
                     </ul>
 
                     <!-- Middle Side Of Navbar -->
@@ -101,7 +96,7 @@
         </nav>
         <div class="container">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="#">Mon compte (utilisateur)</a>
+                <a class="p-2 text-muted" href="#">Panier</a>
                 <a class="p-2 text-muted" href="#">Misez sur le PSG !</a>
                 <a class="p-2 text-muted" href="{{ route('admin.index') }}">Crud Admin(création joueur(s)/équipe(s)</a>
             </nav>

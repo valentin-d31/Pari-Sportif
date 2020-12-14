@@ -142,10 +142,12 @@
                                         class="form-control @error('sport_pref') is-invalid @enderror"
                                         value="{{ old('sport_pref') }}">
                                         <option value="foot">Foot</option>
-                                        <option value="foot">Foot</option>
-                                        <option value="foot">Foot</option>
-                                        <option value="foot">Foot</option>
-                                        <option value="foot">Foot</option>
+                                        <option value="rugby">Rugby</option>
+                                        <option value="handball">Handball</option>
+                                        <option value="basket">Basket</option>
+                                        <option value="athletisme">Athlétisme</option>
+                                        <option value="natation">Natation</option>
+                                        <option value="escrime">Escrime</option>
                                     </select>
                                     @error('sport_pref')
                                         <span class="invalid-feedback" role="alert">

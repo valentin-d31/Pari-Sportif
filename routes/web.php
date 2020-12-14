@@ -26,12 +26,10 @@ Route::get('/index', 'MatchController@index')->name('pari.index');
 Route::get('/paris/{match}', 'MatchController@show')->name('pari.show');
 
 //Route Crud Administrateur
-Route::group(['middleware' => ['admin', 'auth']], function () {
-    Route::get('admin', 'AdminController@index')->name('admin.index');
-    Route::get('admin/create', 'AdminController@create')->name('admin.create');
-    Route::post('admin', 'AdminController@store')->name('admin.store');
-    Route::get('admin/{match}', 'AdminController@show')->name('admin.show');
-    Route::get('admin/{match}/edit', 'AdminController@edit')->name('admin.edit');
-    Route::patch('admin/{match}', 'AdminController@update')->name('admin.update');
-    Route::delete('admin/{match}', 'AdminController@destroy')->name('admin.destroy');
-});
+Route::get('admin', 'AdminController@index')->name('admin.index');
+Route::get('admin/create', 'AdminController@create')->name('admin.create');
+Route::post('admin', 'AdminController@store')->name('admin.store');
+Route::get('admin/{match}', 'AdminController@show')->name('admin.show');
+Route::get('admin/{match}/edit', 'AdminController@edit')->name('admin.edit');
+Route::patch('admin/{match}', 'AdminController@update')->name('admin.update');
+Route::delete('admin/{match}', 'AdminController@destroy')->name('admin.destroy');

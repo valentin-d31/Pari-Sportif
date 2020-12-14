@@ -24,7 +24,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($matchs as $match)
+                @forelse ($matchs as $match)
                     <tr>
                         <td>{{ $match->getCote()[$match->cote] }}</td>
                         <td><a href="{{ route('admin.show', $match) }}">{{ $match->name }}</a></td>
@@ -33,7 +33,9 @@
                         <td>{{ $match->duree }} min</td>
                         <td>{{ $match->created_at->format('d/m/Y') }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <p class="text-center">Il n'y a aucun match en cours</p>
+                @endforelse
             </tbody>
         </table>
         <hr>

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['admin', 'auth']);
+    }
+
     public function index()
     {
         $matchs =  Match::orderBy("cote", 'desc')->get();

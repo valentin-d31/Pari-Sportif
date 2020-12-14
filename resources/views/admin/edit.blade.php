@@ -68,7 +68,10 @@
                     </div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Sauvegarder le match</button>
+            <div class="form" style="display: inline">
+                <button type="submit" class="btn btn-primary">Sauvegarder le match</button>
+                <a href=" {{ route('admin.show', $match->id) }} " class="btn btn-info">Retour</a>
+            </div>
         </form>
     </div>
 @endsection
