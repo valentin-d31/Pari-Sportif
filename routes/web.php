@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,13 @@ Route::get('/', 'MatchController@index')->name('pari.index');
 Route::get('/index', 'MatchController@index')->name('pari.index');
 Route::get('/paris/{match}', 'MatchController@show')->name('pari.show');
 
-//Route Crud Administrateur
+// Utilisateur
+Route::get('users/{user}', [UserController::class, 'show'])->name('user.show');
+Route::get('users/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::patch('users/{user}', [UserController::class, 'update'])->name('user.update');
+Route::delete('users{user}', [UserController::class, 'destroy'])->name('user.delete');
+
+// Administrateur
 Route::get('admin', 'AdminController@index')->name('admin.index');
 Route::get('admin/create', 'AdminController@create')->name('admin.create');
 Route::post('admin', 'AdminController@store')->name('admin.store');

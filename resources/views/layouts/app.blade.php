@@ -74,8 +74,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     {{-- Mon compte --}}
-                                    <a class="dropdown-item"
-                                        href=" {{-- {{ route('', Auth::user()->id) }} --}} ">Mon
+                                    <a class="dropdown-item" href=" {{ route('user.show', Auth::user()->id) }} ">Mon
                                         compte</a>
 
                                     {{-- Déconnexion --}}
