@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Match;
 use App\Equipe;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class AdminController extends Controller
 {
@@ -36,11 +37,22 @@ class AdminController extends Controller
             'cote' => 'required|integer',
             'duree' => 'required|integer',
             'equipe_id' => 'required|integer',
-            //'equipe_A' => 'required|integer',
-            //'equipe_B' => 'required|integer',
+            'image' => 'image',
         ]);
 
-        $match = Match::create($data);
+        $imagePath = request('image')->store('uploads', 'public');
+        $image = Image::make(public_path("/storage/{$imagePath}"))->fit(60, 60);
+        $image->save();
+
+        //$match = Match::create($data);
+            Match::create([
+            'name' => $data['name'],
+            'pays' => $data['pays'],
+            'cote' => $data['cote'],
+            'duree' => $data['duree'],
+            'equipe_id' => $data['equipe_id'],
+            'image' => $imagePath
+        ]);
 
         return redirect()
             ->route('admin.index', compact('match'))

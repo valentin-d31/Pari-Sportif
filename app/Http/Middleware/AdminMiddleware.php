@@ -19,7 +19,7 @@ class AdminMiddleware
         $admin = Auth::user()->admin;
         if ($admin != 0)
             return $next($request);
-        else 
+        else
             return redirect()->route('home');
     }
 }

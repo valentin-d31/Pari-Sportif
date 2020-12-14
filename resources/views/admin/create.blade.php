@@ -9,7 +9,7 @@
     <div class="container">
         @if (!session()->has('success'))
             <ul>
-                <form action="{{ route('admin.store') }}" method="POST">
+                <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="input">Nom du Match</label>
@@ -68,6 +68,18 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="form-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input @error('image')
+                                 is-invalid @enderror" id="validatedCustomFile">
+                                <label class="custom-file-label" for="validatedCustomFile">Choisir une image</label>
+                                @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                     <button type="submit" class="btn btn-primary">Ajouter le match</button>
                 </form>
             </ul>
