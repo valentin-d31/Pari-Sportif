@@ -12,7 +12,7 @@
             </nav>
         </div>
         <h1>Afficher les matchs</h1>
-        <table class="table">
+        <table class="table text-center">
             <thead>
                 <tr>
                     <th scope="col">Cote</th>
@@ -30,7 +30,11 @@
                     <tr>
                         <td>{{ $match->getCote()[$match->cote] }}</td>
                         <td><a href="{{ route('admin.show', $match) }}">{{ $match->name }}</a></td>
-                        <td>{{ $match->equipe->name }}</td>
+                        <td>
+                            <a href="https://www.google.fr/maps/search/ {{ $match->equipe->name }}" target="_blank">
+                                {{ $match->equipe->name }}
+                        </td>
+                        </a>
                         <td>{{ $match->pays }}</td>
                         <td>{{ $match->duree }} min</td>
                         <td>{{ $match->created_at->format('d/m/Y') }}</td>
