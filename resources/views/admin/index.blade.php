@@ -45,8 +45,19 @@
                             <form action=" {{ route('admin.destroy', $match->id) }} " method="post">
                                 @csrf
                                 @method('DELETE')
+
+                                {{-- Voir le match --}}
+                                <a href=" {{ route('admin.show', $match) }} " class="btn btn-success"><i
+                                        class="fas fa-eye"></i></a>
+
+                                {{-- Editer le match --}}
+                                <a href=" {{ route('admin.edit', $match) }} " class="btn btn-info"><i
+                                        class="far fa-edit"></i></a>
+
+                                {{-- Supprimer le match --}}
                                 <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                             </form>
+
                         </td>
                     </tr>
                 @empty

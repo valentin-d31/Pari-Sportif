@@ -98,9 +98,10 @@
         </nav>
         <div class="container">
             <nav class="nav d-flex justify-content-between">
-                <a class="p-2 text-muted" href="#">Panier</a>
-                <a class="p-2 text-muted" href="#">Misez sur le PSG !</a>
-                <a class="p-2 text-muted" href="{{ route('admin.index') }}">Crud Admin(création joueur(s)/équipe(s)</a>
+                <button type="button" class="btn btn-primary my-2">Panier <span class="badge bg-warning">0</span>
+                </button>
+                <a class="p-2 text-muted" href="https://www.psg.fr/" target="_blank">Misez sur le PSG !</a>
+                <a class="p-2 text-muted" href="{{ route('admin.index') }}">Gérer les matchs</a>
             </nav>
         </div>
         <main class="py-4">
