@@ -22,6 +22,7 @@
                     <th scope="col">Durée</th>
                     <th scope="col">Création</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,8 +35,14 @@
                         <td>{{ $match->duree }} min</td>
                         <td>{{ $match->created_at->format('d/m/Y') }}</td>
                         <td>
-                        <img src="{{asset('storage') . '/' . $match->image}}"
-                        style="width: 65px; height: 65px">
+                            <img src="{{ asset('storage') . '/' . $match->image }}" style="width: 65px; height: 65px">
+                        </td>
+                        <td>
+                            <form action=" {{ route('admin.destroy', $match->id) }} " method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @empty

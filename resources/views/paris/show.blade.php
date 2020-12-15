@@ -15,7 +15,7 @@
                 <strong class="mb-auto">Cote à {{ $match->getCote()[$match->cote] }}</strong>
                 <div class="container my-4" style="display: inline">
                     <a href="#"><button class="btn btn-primary pl-2">Parier sur {{ $match->pays }} </button></a>
-                    <a href="#"><button class="btn btn-info">Parier sur le vent </button></a>
+                    <a href="#"><button class="btn btn-info">Parier sur la 2eme équipe (temporaire) </button></a>
                 </div>
             </div>
         </div>

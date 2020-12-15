@@ -45,7 +45,7 @@ class AdminController extends Controller
         $image->save();
 
         //$match = Match::create($data);
-            Match::create([
+        Match::create([
             'name' => $data['name'],
             'pays' => $data['pays'],
             'cote' => $data['cote'],
@@ -89,14 +89,12 @@ class AdminController extends Controller
         if (!$match)
             return abort(404);
 
-
         $data = request()->validate([
             'name' => 'required',
             'pays' => 'required',
             'cote' => 'required|integer',
             'duree' => 'required|integer',
-            'equipe_id' => 'required|integer'
-
+            'equipe_id' => 'required|integer',
         ]);
 
         if ($match->update($data)) {

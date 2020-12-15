@@ -11,9 +11,11 @@
             <ul>
                 <form action="{{ route('admin.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                    {{-- Nom du match --}}
                     <div class="form-group">
-                        <label for="input">Nom du Match</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                        <label for="nom_match">Nom du Match</label>
+                        <input type="text" id="nom_match" class="form-control @error('name') is-invalid @enderror" name="name"
                             placeholder="Rentrez le nom du match">
                         @error('match')
                             <div class="invalid-feedback">
@@ -21,9 +23,11 @@
                             </div>
                         @enderror
                     </div>
+
+                    {{-- Pays --}}
                     <div class="form-group">
-                        <label for="input">Pays</label>
-                        <input type="text" class="form-control @error('pays') is-invalid @enderror" name="pays"
+                        <label for="pays">Pays</label>
+                        <input type="text" id="pays" class="form-control @error('pays') is-invalid @enderror" name="pays"
                             placeholder="Rentrez le nom pays">
                         @error('pays')
                             <div class="invalid-feedback">
@@ -31,9 +35,11 @@
                             </div>
                         @enderror
                     </div>
+
+                    {{-- Nom de l'équipe --}}
                     <div class="form-group">
-                        <label for="input">Nom de l'Equipe</label>
-                        <select class="custom-select @error('equipe_id') is-invalid @enderror" name="equipe_id">
+                        <label for="nom_equipe">Nom de l'Equipe</label>
+                        <select id="nom_equipe" class="custom-select @error('equipe_id') is-invalid @enderror" name="equipe_id">
                             @foreach ($equipes as $equipe)
                                 <option value="{{ $equipe->id }}">{{ $equipe->name }}</option>
                             @endforeach
@@ -44,9 +50,11 @@
                             </div>
                         @enderror
                     </div>
+
+                    {{-- Cote --}}
                     <div class="form-group">
-                        <label for="input">Cote</label>
-                        <select class="custom-select @error('cote') is-invalid @enderror" name="cote">
+                        <label for="cote">Cote</label>
+                        <select id="cote" class="custom-select @error('cote') is-invalid @enderror" name="cote">
                             @foreach ($match->getCote() as $key => $value)
                                 <option value="{{ $key }}" {{ $match->cote == $value ? 'selected' : '' }}>{{ $value }}
                                 </option>
@@ -58,9 +66,11 @@
                             </div>
                         @enderror
                     </div>
+
+                    {{-- Durée du match --}}
                     <div class="form-group">
-                        <label for="input">Durée du match</label>
-                        <input type="text" class="form-control @error('pays') is-invalid @enderror" name="duree"
+                        <label for="duree">Durée du match</label>
+                        <input type="text" id="duree" class="form-control @error('pays') is-invalid @enderror" name="duree"
                             placeholder="Rentrez la duree du match">
                         @error('duree')
                             <div class="invalid-feedback">
@@ -68,9 +78,12 @@
                             </div>
                         @enderror
                     </div>
+
+                    {{-- Importer une image --}}
                     <div class="form-group">
+                        <label for="image">Importez une image</label>
                             <div class="custom-file">
-                                <input type="file" name="image" class="custom-file-input @error('image')
+                                <input type="file" id="image" name="image" class="custom-file-input @error('image')
                                  is-invalid @enderror" id="validatedCustomFile">
                                 <label class="custom-file-label" for="validatedCustomFile">Choisir une image</label>
                                 @error('image')

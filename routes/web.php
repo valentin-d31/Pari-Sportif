@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Afficher les matchs pour un utilisateur
+// Matchs
 Route::get('/', 'MatchController@index')->name('pari.index');
 Route::get('/index', 'MatchController@index')->name('pari.index');
 Route::get('/paris/{match}', 'MatchController@show')->name('pari.show');

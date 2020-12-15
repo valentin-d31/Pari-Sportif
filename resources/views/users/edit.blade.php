@@ -20,7 +20,7 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
-                                        name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        name="name" value="{{ old('name') ?? $user->name }}" required autocomplete="name" autofocus>
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -36,7 +36,7 @@
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                        name="email" value="{{ old('email') }}" required autocomplete="email">
+                                        name="email" value="{{ old('email') ?? $user->email }}" required autocomplete="email">
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
                                 <label for="age" class="col-md-4 col-form-label text-md-right">Age</label>
 
                                 <div class="col-md-6">
-                                    <input id="age" type="number" value="{{ old('age') }}"
+                                    <input id="age" type="number" value="{{ old('age') ?? $user->age }}"
                                         class="form-control @error('age') is-invalid @enderror" name="age" required>
                                     @error('age')
                                         <span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
                                 <div class="col-md-6">
                                     <input id="adresse" type="text"
                                         class="form-control @error('adresse') is-invalid @enderror"
-                                        value="{{ old('adresse') }}" name="adresse" required>
+                                        value="{{ old('adresse') ?? $user->adresse }}" name="adresse" required>
                                     @error('adresse')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -112,7 +112,7 @@
                                 <div class="col-md-6">
                                     <input id="tel_mobile" type="number"
                                         class="form-control @error('tel_mobile') is-invalid @enderror"
-                                        value="{{ old('tel_mobile') }}" name="tel_mobile" required>
+                                        value="{{ old('tel_mobile') ?? $user->tel_mobile }}" name="tel_mobile" required>
                                     @error('tel_mobile')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -128,7 +128,7 @@
                                 <div class="col-md-6">
                                     <input id="tel_fixe" type="number"
                                         class="form-control @error('tel_fixe') is-invalid @enderror"
-                                        value="{{ old('tel_fixe') }}" name="tel_fixe" required>
+                                        value="{{ old('tel_fixe') ?? $user->tel_fixe }}" name="tel_fixe" required>
                                     @error('tel_fixe')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -144,7 +144,7 @@
                                 <div class="col-md-6">
                                     <select name="sport_pref" id="sport_pref"
                                         class="form-control @error('sport_pref') is-invalid @enderror"
-                                        value="{{ old('sport_pref') }}">
+                                        value="{{ old('sport_pref') ?? $user->sport_pref }}">
                                         <option value="foot">Foot</option>
                                         <option value="rugby">Rugby</option>
                                         <option value="handball">Handball</option>
@@ -168,7 +168,7 @@
                                 <div class="col-md-6">
                                     <input id="montant_max" type="number"
                                         class="form-control @error('montant_max') is-invalid @enderror"
-                                        value="{{ old('montant_max') }}" name="montant_max" required>
+                                        value="{{ old('montant_max') ?? $user->montant_max }}" name="montant_max" required>
                                     @error('montant_max')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
