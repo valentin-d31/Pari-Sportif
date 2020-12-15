@@ -29,7 +29,7 @@
                                 <p class="card-text mb-auto">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, ad veritatis!
                                 </p>
-                                <a href="{{ route('pari.show', $match->id) }}" class="btn btn-info my-3">Voir le match</a>
+                                <a href="{{ route('match.show', $match->id) }}" class="btn btn-info my-3">Voir le match</a>
                             </div>
                             <img src=" {{ asset('storage') . '/' . $match->image }} "
                                 class="card-img-right flex-auto d-none d-md-block" width="275" alt="Card image cap">

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MatchController;
+use App\Http\Controllers\ClientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Matchs
-Route::get('/', 'MatchController@index')->name('pari.index');
-Route::get('/index', 'MatchController@index')->name('pari.index');
-Route::get('/paris/{match}', 'MatchController@show')->name('pari.show');
+Route::get('/', [MatchController::class, 'index'])->name('match.index');
+Route::get('/paris', [MatchController::class, 'index'])->name('match.index');
+Route::get('/paris/{match}', [MatchController::class, 'show'])->name('match.show');
 
 // Utilisateur
 Route::get('users/{user}', [UserController::class, 'show'])->name('user.show');

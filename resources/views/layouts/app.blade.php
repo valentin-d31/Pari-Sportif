@@ -50,7 +50,7 @@
                     <!-- Middle Side Of Navbar -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="blog-header-logo text-dark" href="{{ route('pari.index') }}">
+                            <a class="blog-header-logo text-dark" href="{{ route('match.index') }}">
                                 <h2>💆🏼‍♂️LeBonPari👴🏿</h2>
                             </a>
                         </li>
