@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MatchController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->middleware('auth')->except('index');
@@ -20,12 +20,6 @@ class MatchController extends Controller
      */
     public function index()
     {
-        
-        // $paris = Pari::orderBy("created_at", 'desc')->paginate(4);
-
-        // return view('paris.index', compact('paris'));
-
-        
         $matchs =  Match::orderBy("cote", "DESC")->paginate(6);
 
         return view('paris.index', compact('matchs'));
@@ -60,7 +54,7 @@ class MatchController extends Controller
      */
     public function show(Match $match)
     {
-        
+
         // $pari = Pari::where('slug', $slug)->first();
 
         // if (!$pari) {

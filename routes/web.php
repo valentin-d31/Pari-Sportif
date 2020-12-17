@@ -23,8 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Matchs
 Route::get('/', [MatchController::class, 'index'])->name('match.index');
-Route::get('/paris', [MatchController::class, 'index'])->name('match.index');
-Route::get('/paris/{match}', [MatchController::class, 'show'])->name('match.show');
+Route::get('/matchs', [MatchController::class, 'index'])->name('match.index');
+Route::get('/matchs/{match}', [MatchController::class, 'show'])->name('match.show');
 
 // Utilisateur
 Route::get('users/{user}', [UserController::class, 'show'])->name('user.show');

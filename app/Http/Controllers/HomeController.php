@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect()->route('match.index')->with("echec", "Vous n'êtes pas un administrateur");
+        return redirect()->route('match.index');
     }
 }
