@@ -10,7 +10,7 @@ class MatchController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth');
     }
 
     /**
@@ -22,7 +22,7 @@ class MatchController extends Controller
     {
         $matchs =  Match::orderBy("cote", "DESC")->paginate(6);
 
-        return view('paris.index', compact('matchs'));
+        return view('matchs.index', compact('matchs'));
     }
 
     /**
@@ -54,16 +54,7 @@ class MatchController extends Controller
      */
     public function show(Match $match)
     {
-
-        // $pari = Pari::where('slug', $slug)->first();
-
-        // if (!$pari) {
-        //     return abort(404);
-        //   }
-
-        // return view('paris.show', compact('pari'));
-
-        return view('paris.show', compact('match'));
+        return view('matchs.show', compact('match'));
     }
 
     /**
