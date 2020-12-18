@@ -103,7 +103,7 @@
                 <a class="p-2 text-muted" href="https://www.psg.fr/" target="_blank">Misez sur le PSG !</a>
 
                 @can('view', \App\User::class)
-                    <a class="p-2 text-muted" href="{{ route('admin.index') }}">Gérer les matchs</a>
+                    <a class="p-2 text-muted" href="{{ route('admin.index') }}">Administration</a>
                 @endcan
             </nav>
         </div>

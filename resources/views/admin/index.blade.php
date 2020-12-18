@@ -6,6 +6,12 @@
 
 @section('content')
     <div class="container">
+
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="nav-scroller py-1 mb-2">
             <nav class="nav d-flex justify-content-between">
                 <a class="p-2 text-muted" href="{{ route('admin.create') }}">Créer un Match</a>
@@ -66,5 +72,44 @@
             </tbody>
         </table>
         <hr>
+
+        <h1>Afficher les utilisateurs</h1>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Tel. M</th>
+                    <th scope="col">Sport préféré</th>
+                    <th scope="col">montant max</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->name }}</td>
+                        <td><a href="mailto: {{ $user->email }} ">{{ $user->email }}</a></td>
+                        </a>
+                        <td>{{ $user->age }}</td>
+                        <td>{{ $user->tel_mobile }}</td>
+                        <td>{{ $user->sport_pref }}</td>
+                        <td>{{ $user->montant_max }}</td>
+                        <td>
+                            <form action=" {{ route('user.delete', $user->id) }} " method="post">
+                                @csrf
+                                @method('DELETE')
+
+                                {{-- Supprimer le match --}}
+                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                            </form>
+
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{ $users->links() }}
     </div>
 @endsection

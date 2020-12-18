@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Match;
 use App\Equipe;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ class AdminController extends Controller
     public function index()
     {
         $matchs =  Match::orderBy("cote", 'desc')->get();
+        $users =  User::orderBy("name", 'ASC')->paginate(50);
 
-        return view('admin.index', compact('matchs'));
+        return view('admin.index', compact(["matchs", "users"]));
     }
 
     public function create()
