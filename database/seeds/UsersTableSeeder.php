@@ -14,24 +14,6 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker\Factory::create();
-        $tel = Array([
-            "0695847391",
-            "0906585687",
-            "0596963867",
-            "0497567896",
-            "0136493746",
-            "0185947362",
-            "0475943953"
-        ]);
-
-        $sport = Array([
-            "foot",
-            "natation",
-            "rugby",
-            "handball",
-            "athlétisme",
-            "escrime"
-        ]);
 
         for ($i = 0; $i < 30; $i++) {
             User::create([
@@ -42,7 +24,7 @@ class UsersTableSeeder extends Seeder
                 "tel_mobile" => $faker->phoneNumber,
                 "tel_fixe" => $faker->phoneNumber,
                 "sport_pref" => $faker->word,
-                "montant_max" => $faker->randomDigit,
+                "montant_max" => $faker->randomDigit . $faker->randomDigit,
                 "password" => $faker->password,
                 "admin" => "0"
             ]);

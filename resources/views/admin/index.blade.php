@@ -17,7 +17,7 @@
                 <a class="p-2 text-muted" href="{{ route('admin.create') }}">Créer un Match</a>
             </nav>
         </div>
-        <h1>Afficher les matchs</h1>
+        <h1 class="my-2">Afficher les matchs</h1>
         <table class="table text-center">
             <thead>
                 <tr>
@@ -73,11 +73,10 @@
         </table>
         <hr>
 
-        <h1>Afficher les utilisateurs</h1>
+        <h1 class="my-5">Afficher les utilisateurs</h1>
         <table class="table text-center">
             <thead>
                 <tr>
-                    <th scope="col">Nom</th>
                     <th scope="col">E-mail</th>
                     <th scope="col">Age</th>
                     <th scope="col">Tel. M</th>
@@ -89,9 +88,7 @@
             <tbody>
                 @foreach ($users as $user)
                     <tr>
-                        <td>{{ $user->name }}</td>
                         <td><a href="mailto: {{ $user->email }} ">{{ $user->email }}</a></td>
-                        </a>
                         <td>{{ $user->age }}</td>
                         <td>{{ $user->tel_mobile }}</td>
                         <td>{{ $user->sport_pref }}</td>
@@ -101,7 +98,16 @@
                                 @csrf
                                 @method('DELETE')
 
-                                {{-- Supprimer le match --}}
+                                {{-- Voir l'utilisateur --}}
+                                <a href=" {{ route('user.show', $user) }} " class="btn btn-success"><i
+                                        class="fas fa-eye"></i></a>
+
+                                {{-- Editer l'utilisateur --}}
+                                <a href=" {{ route('user.edit', $user) }} " class="btn btn-info"><i
+                                        class="far fa-edit"></i></a>
+
+
+                                {{-- Supprimer l'utilisateur --}}
                                 <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
                             </form>
 
