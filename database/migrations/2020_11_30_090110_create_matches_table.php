@@ -15,7 +15,6 @@ class CreateMatchesTable extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->increments('id');
-            //$table->foreignId('equipe_id')->constrained();
             $table->string('name');
             $table->string('pays');
             $table->integer('cote');
@@ -23,9 +22,6 @@ class CreateMatchesTable extends Migration
             $table->unsignedBigInteger('equipe_id')->index();
             $table->string('image');
             $table->timestamps();
-
-            //$table->foreign('equipe_id')->references('id')->on('equipes');
-
         });
     }
 

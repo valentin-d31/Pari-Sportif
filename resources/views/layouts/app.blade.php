@@ -101,7 +101,10 @@
                 <button type="button" class="btn btn-primary my-2">Panier <span class="badge bg-warning">0</span>
                 </button>
                 <a class="p-2 text-muted" href="https://www.psg.fr/" target="_blank">Misez sur le PSG !</a>
-                <a class="p-2 text-muted" href="{{ route('admin.index') }}">Gérer les matchs</a>
+
+                @can('view', \App\User::class)
+                    <a class="p-2 text-muted" href="{{ route('admin.index') }}">Gérer les matchs</a>
+                @endcan
             </nav>
         </div>
         <main class="py-4">
