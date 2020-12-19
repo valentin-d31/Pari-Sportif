@@ -46,7 +46,6 @@ class AdminController extends Controller
         $image = Image::make(public_path("/storage/{$imagePath}"))->fit(60, 60);
         $image->save();
 
-        //$match = Match::create($data);
         Match::create([
             'name' => $data['name'],
             'pays' => $data['pays'],

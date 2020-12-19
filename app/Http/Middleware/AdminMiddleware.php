@@ -20,6 +20,6 @@ class AdminMiddleware
         if ($admin != 0)
             return $next($request);
         else
-            return redirect()->route('match.index')->with("echec", "Vous n'êtes pas un administrateur");;
+            return redirect()->route('match.index')->with("echec", "Vous n'êtes pas un administrateur");
     }
 }

@@ -17,6 +17,8 @@
                 <a class="p-2 text-muted" href="{{ route('admin.create') }}">Créer un Match</a>
             </nav>
         </div>
+
+        {{-- Afficher les matchs --}}
         <h1 class="my-2">Afficher les matchs</h1>
         <table class="table text-center">
             <thead>
@@ -73,6 +75,7 @@
         </table>
         <hr>
 
+        {{-- Afficher les utilisateurs --}}
         <h1 class="my-5">Afficher les utilisateurs</h1>
         <table class="table text-center">
             <thead>
