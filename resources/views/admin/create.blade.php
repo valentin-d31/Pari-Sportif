@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <label for="nom_equipe">Nom de l'Equipe</label>
                         <select id="nom_equipe" class="custom-select @error('equipe_id') is-invalid @enderror" name="equipe_id">
-                            @foreach ($equipes as $equipe)
+                            @foreach ($match->equipes as $equipe)
                                 <option value="{{ $equipe->id }}">{{ $equipe->name }}</option>
                             @endforeach
                         </select>

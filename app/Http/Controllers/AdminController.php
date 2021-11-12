@@ -26,9 +26,11 @@ class AdminController extends Controller
     public function create()
     {
         $equipes = Equipe::all();
-        $match = new Match();
 
-        return view('admin.create', compact('equipes', 'match'));
+        $match = new Match();
+        $match->equipes()->attach($equipes);
+
+        return view('admin.create', compact('match'));
     }
 
     public function store(Request $request)
@@ -39,6 +41,7 @@ class AdminController extends Controller
             'cote' => 'required|integer',
             'duree' => 'required|integer',
             'equipe_id' => 'required|integer',
+            'match_id' => 'required|interger',
             'image' => 'image',
         ]);
 
@@ -52,6 +55,7 @@ class AdminController extends Controller
             'cote' => $data['cote'],
             'duree' => $data['duree'],
             'equipe_id' => $data['equipe_id'],
+            'match_id' => $data['match_id'],
             'image' => $imagePath
         ]);
 

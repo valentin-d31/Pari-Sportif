@@ -8,8 +8,8 @@ class Equipe extends Model
 {
     protected $guarded = [];
 
-    public function match()
+    public function matchs()
     {
-        return $this->belongsTo('App\Match');
+        return $this->belongsToMany('App\Match');
     }
 }

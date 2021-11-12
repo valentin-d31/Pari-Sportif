@@ -192,7 +192,7 @@
     @endif
     @yield('content')
     <footer class="blog-footer">
-        <p>👹Alexandre, Timothée & Valentin👽</p>
+        <p>by Valentin👽</p>
     </footer>
 </body>
 

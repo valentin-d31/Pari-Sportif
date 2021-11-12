@@ -113,7 +113,7 @@
     </div>
     <footer class="text-muted">
         <div class="container d-flex justify-content-center">
-            <p>Alexandre🍑, Timothée💦 Valentin🍆</p>
+            <p>by Valentin🍆</p>
         </div>
     </footer>
 
